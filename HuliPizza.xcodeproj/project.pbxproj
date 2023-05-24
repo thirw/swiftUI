@@ -18,6 +18,10 @@
 		B6E881322A00FDDE0032C540 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E881312A00FDDE0032C540 /* ContentView.swift */; };
 		B6E881342A00FDE00032C540 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6E881332A00FDE00032C540 /* Assets.xcassets */; };
 		B6E881372A00FDE00032C540 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6E881362A00FDE00032C540 /* Preview Assets.xcassets */; };
+		EB4986F92A1E0E8F009FF4B8 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4986F52A1E0E8C009FF4B8 /* OrderModel.swift */; };
+		EB4986FA2A1E0E8F009FF4B8 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4986F62A1E0E8C009FF4B8 /* MenuItem.swift */; };
+		EB4986FB2A1E0E8F009FF4B8 /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4986F72A1E0E8C009FF4B8 /* OrderItem.swift */; };
+		EB4986FC2A1E0E90009FF4B8 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4986F82A1E0E8C009FF4B8 /* MenuModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +37,10 @@
 		B6E881312A00FDDE0032C540 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B6E881332A00FDE00032C540 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6E881362A00FDE00032C540 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EB4986F52A1E0E8C009FF4B8 /* OrderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
+		EB4986F62A1E0E8C009FF4B8 /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		EB4986F72A1E0E8C009FF4B8 /* OrderItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderItem.swift; sourceTree = "<group>"; };
+		EB4986F82A1E0E8C009FF4B8 /* MenuModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +82,7 @@
 				B6C4D3282A1249A70017EE83 /* OrderRowView.swift */,
 				B6C4D32A2A1249BA0017EE83 /* HeaderView.swift */,
 				B63AE02C2A1C764F009A9DBA /* RatingsView.swift */,
+				EB4986F42A1E0E8C009FF4B8 /* Model Code */,
 				B6E881332A00FDE00032C540 /* Assets.xcassets */,
 				B6E881352A00FDE00032C540 /* Preview Content */,
 			);
@@ -86,6 +95,17 @@
 				B6E881362A00FDE00032C540 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EB4986F42A1E0E8C009FF4B8 /* Model Code */ = {
+			isa = PBXGroup;
+			children = (
+				EB4986F52A1E0E8C009FF4B8 /* OrderModel.swift */,
+				EB4986F62A1E0E8C009FF4B8 /* MenuItem.swift */,
+				EB4986F72A1E0E8C009FF4B8 /* OrderItem.swift */,
+				EB4986F82A1E0E8C009FF4B8 /* MenuModel.swift */,
+			);
+			path = "Model Code";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,11 +180,15 @@
 			files = (
 				B6C4D3212A1248C80017EE83 /* OrderView.swift in Sources */,
 				B6C4D3232A1248F00017EE83 /* MenuView.swift in Sources */,
+				EB4986F92A1E0E8F009FF4B8 /* OrderModel.swift in Sources */,
 				B6E881322A00FDDE0032C540 /* ContentView.swift in Sources */,
 				B6E881302A00FDDE0032C540 /* HuliPizzaApp.swift in Sources */,
+				EB4986FB2A1E0E8F009FF4B8 /* OrderItem.swift in Sources */,
 				B63AE02D2A1C764F009A9DBA /* RatingsView.swift in Sources */,
 				B6C4D3272A1249990017EE83 /* MenuRowView.swift in Sources */,
 				B6C4D3292A1249A70017EE83 /* OrderRowView.swift in Sources */,
+				EB4986FC2A1E0E90009FF4B8 /* MenuModel.swift in Sources */,
+				EB4986FA2A1E0E8F009FF4B8 /* MenuItem.swift in Sources */,
 				B6C4D3252A1249890017EE83 /* MenuItemView.swift in Sources */,
 				B6C4D32B2A1249BA0017EE83 /* HeaderView.swift in Sources */,
 			);
