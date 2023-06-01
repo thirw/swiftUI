@@ -9,24 +9,28 @@ import SwiftUI
 
 struct MenuItemView: View {
     @State private var addedItem:Bool = false
-    
+    @Binding var item:MenuItem
+    @State var presentAlert:Bool = false
+    @ObservedObject var orders:OrderModel
+    @State private var newOrder:Bool = true
+    @State private var order = noOrderItem
     var body: some View {
         VStack {
             HStack {
-                Text("Margherita Huli Pizza")
+                Text(item.name)
                     .font(.title)
                     .fontWeight(.semibold)
                     .foregroundStyle(.ultraThickMaterial)
                     .padding(.leading)
-                    
-                                    
-                if let image = UIImage(named: "0x_lg") {
+                
+                
+                if let image = UIImage(named: "\(item.id)_lg") {
                     Image(uiImage: image)
                         .resizable()
                         .scaledToFit()
                         .cornerRadius(15)
                         .padding([.top, .bottom], 5)
-                        
+                    
                     //                    .clipShape(RoundedRectangle(cornerRadius: 10))
                 } else {
                     Image("surfboard_lg")
@@ -41,23 +45,41 @@ struct MenuItemView: View {
             VStack(alignment: .leading) {
                 
                 ScrollView {
-                    Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consectetur ante eget tempus eleifend. Vivamus a vehicula enim. Vestibulum condimentum quis urna vel tincidunt. Nunc imperdiet posuere turpis quis posuere. Duis metus nunc, pellentesque sit amet volutpat ut, molestie sit amet leo. Duis aliquet hendrerit diam sit amet dapibus. Curabitur.")
+                    Text(item.description)
                         .font(.custom("Georgia", size: 18, relativeTo: .body))
                 }
                 
             }
             Button{
-                addedItem = true
+                order = OrderItem(id: -999, item: item)
+                presentAlert = true
             } label: {
                 Spacer()
-                Text(12.99, format: .currency(code: "USD")).bold()
+                Text(item.price, format: .currency(code: "USD")).bold()
                 Image(systemName: addedItem ? "cart.fill.badge.plus" : "cart.badge.plus")
                 Spacer()
             }
+            .disabled(item.id < 0)
             .padding()
             .background(.red, in: Capsule())
             .foregroundStyle(.white)
             .padding(5)
+//            .alert("Buy a \(item.name)", isPresented: $presentAlert) {
+//                Button("No", role: .cancel){}
+//                Button("Yes") {
+//                    addedItem = true
+//                    orders.addOrder(item, quantity: 1)
+//                }
+//                Button("Make it a doble!") {
+//                    addedItem = true
+//                    orders.addOrder(item, quantity: 2)
+//                }
+//            }
+            .sheet(isPresented: $presentAlert) {
+                addedItem = true
+            } content: {
+                OrderDetailView(orderItem: $order, presentSheet: $presentAlert, newOrder: $newOrder)
+            }
             
         }
     }
@@ -65,6 +87,6 @@ struct MenuItemView: View {
 
 struct MenuItemView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuItemView()
+        MenuItemView(item: .constant(testMenuItem), orders: OrderModel())
     }
 }
